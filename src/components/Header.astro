@@ -13,7 +13,12 @@ const { showBrand = true } = Astro.props;
 	<nav class="site-nav" aria-label="Primary navigation">
 		{showBrand && <a class="brand" href="/">{SITE_TITLE}</a>}
 		<div class:list={['nav-actions', { 'nav-actions--solo': !showBrand }]}>
+			<LanguageSwitch />
 			<div class="internal-links">
+				<HeaderLink href="/projects">
+					<span class="lang-en">Projects</span>
+					<span class="lang-zh">项目</span>
+				</HeaderLink>
 				<HeaderLink href="/blog">
 					<span class="lang-en">Blog</span>
 					<span class="lang-zh">博客</span>
@@ -23,14 +28,12 @@ const { showBrand = true } = Astro.props;
 					<span class="lang-zh">关于</span>
 				</HeaderLink>
 			</div>
-			<LanguageSwitch />
 		</div>
 	</nav>
 </header>
 
 <style>
 	.site-header {
-		border-bottom: 1px solid rgb(var(--line));
 		background: rgba(255, 255, 255, 92%);
 		backdrop-filter: blur(16px);
 	}

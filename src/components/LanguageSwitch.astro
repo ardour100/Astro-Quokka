@@ -1,5 +1,9 @@
 <label class="language-switch" aria-label="Language">
-	<span class="lang-label" aria-hidden="true">文A</span>
+	<svg class="lang-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+		<circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+		<ellipse cx="8" cy="8" rx="3" ry="6.5" stroke="currentColor" stroke-width="1.5"/>
+		<path d="M2 8h12" stroke="currentColor" stroke-width="1.5"/>
+	</svg>
 	<select>
 		<option value="en">EN</option>
 		<option value="zh">中文</option>
@@ -32,10 +36,11 @@
 		cursor: pointer;
 	}
 
-	.lang-label {
-		font-size: 0.78rem;
+	.lang-icon {
+		width: 14px;
+		height: 14px;
 		color: rgb(var(--muted));
-		white-space: nowrap;
+		flex-shrink: 0;
 	}
 
 	.language-switch select {

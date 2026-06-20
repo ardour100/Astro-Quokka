@@ -26,7 +26,6 @@ body {
 	margin: 0;
 	color: rgb(var(--gray-dark));
 	background:
-		linear-gradient(180deg, rgba(var(--paper), 72%) 0, rgba(255, 255, 255, 0) 320px),
 		#fff;
 	font-family:
 		var(--font-atkinson),
