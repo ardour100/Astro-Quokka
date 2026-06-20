@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
 interface Props {
 	showBrand?: boolean;
 }
@@ -22,6 +23,7 @@ const { showBrand = true } = Astro.props;
 					<span class="lang-zh">关于</span>
 				</HeaderLink>
 			</div>
+			<LanguageSwitch />
 		</div>
 	</nav>
 </header>
