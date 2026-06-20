@@ -1,0 +1,35 @@
+---
+import { SITE_TITLE } from '../consts';
+
+const today = new Date();
+---
+
+<footer class="site-footer">
+	<div>
+		<span>&copy; {today.getFullYear()} {SITE_TITLE}</span>
+		<span class="footer-dot" aria-hidden="true">/</span>
+		<span class="lang-en">Written in English and Chinese.</span>
+		<span class="lang-zh">支持英文和中文阅读。</span>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		width: min(100% - 32px, 760px);
+		margin: 0 auto;
+		padding: 48px 0 72px;
+		color: rgb(var(--muted));
+		font-size: 0.9rem;
+	}
+
+	.footer-dot {
+		margin: 0 0.45rem;
+		color: rgb(var(--line-strong));
+	}
+
+	@media (max-width: 620px) {
+		.site-footer {
+			padding: 36px 0 56px;
+		}
+	}
+</style>

@@ -1,0 +1,57 @@
+<div class="language-switch" aria-label="Language">
+	<button type="button" data-language-option="en" aria-pressed="true">EN</button>
+	<button type="button" data-language-option="zh" aria-pressed="false">中文</button>
+</div>
+
+<script>
+	const setLanguage = (language: 'en' | 'zh') => {
+		document.documentElement.dataset.lang = language;
+		document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+		localStorage.setItem('language', language);
+		document.querySelectorAll('[data-language-option]').forEach((button) => {
+			const isActive = button.getAttribute('data-language-option') === language;
+			button.setAttribute('aria-pressed', String(isActive));
+		});
+	};
+
+	const initialLanguage = document.documentElement.dataset.lang === 'zh' ? 'zh' : 'en';
+	setLanguage(initialLanguage);
+
+	document.querySelectorAll('[data-language-option]').forEach((button) => {
+		button.addEventListener('click', () => {
+			const language = button.getAttribute('data-language-option') === 'zh' ? 'zh' : 'en';
+			setLanguage(language);
+		});
+	});
+</script>
+
+<style>
+	.language-switch {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+		padding: 3px;
+		border: 1px solid rgb(var(--line));
+		border-radius: 999px;
+		background: rgb(var(--paper));
+	}
+
+	.language-switch button {
+		min-width: 42px;
+		height: 28px;
+		padding: 0 10px;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
+		color: rgb(var(--muted));
+		font: inherit;
+		font-size: 0.78rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.language-switch button[aria-pressed='true'] {
+		background: rgb(var(--black));
+		color: white;
+	}
+</style>
